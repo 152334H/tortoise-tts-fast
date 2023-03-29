@@ -197,7 +197,6 @@ def main():
                 file_name=filename,
                 mime="audio/wav",
             )
-            
 
         with st.spinner(
             f"Generating {candidates} candidates for voice {voice} (seed={seed}). You can see progress in the terminal"
