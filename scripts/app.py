@@ -192,9 +192,10 @@ def main():
             """
             st.audio(str(fp), format="audio/wav")
             st.download_button(
-                "Download sample",
-                str(fp),
-                file_name=filename,  # this doesn't actually seem to work lol
+                label="Download sample",
+                data=open(fp, "rb").read(),
+                file_name=filename,
+                mime="audio/wav",
             )
 
         with st.spinner(
