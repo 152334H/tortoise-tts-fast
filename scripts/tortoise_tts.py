@@ -6,8 +6,10 @@ import sys
 import tempfile
 from dataclasses import dataclass
 from pathlib import Path
-from typing import Literal, Optional
-
+try:
+    from typing import Literal, Optional
+except ImportError:
+    from typing_extensions import Literal, Optional
 import torch
 import torchaudio
 from simple_parsing import ArgumentParser, field
