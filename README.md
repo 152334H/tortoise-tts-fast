@@ -33,7 +33,7 @@ All changes in this fork are licensed under the **AGPL**. For avoidance beyond a
 All results listed were generated with a slightly undervolted RTX 3090 on Ubuntu 22.04, with the following base command:
 
 ```sh
-./script/tortoise-tts.py --voice emma --seed 42 --text "$TEXT"
+./scripts/tortoise-tts.py --voice emma --seed 42 --text "$TEXT"
 ```
 
 ### **NOTE**: samples here are somewhat old; they don't have `voicefixer` applied.
@@ -117,33 +117,33 @@ If you are experiencing errors related to GPU usage (or lackthereof), please see
 For maximum speed (and worst quality), you can try:
 
 ```sh
-./script/tortoise-tts.py --half --no_cond_free --preset ultra_fast #...
+./scripts/tortoise-tts.py --half --no_cond_free --preset ultra_fast #...
 # or, to only generate 1 sample:
-./script/tortoise-tts.py --half --no_cond_free --preset single_sample --candidates 1 #...
+./scripts/tortoise-tts.py --half --no_cond_free --preset single_sample --candidates 1 #...
 ```
 
 But in most cases, these settings should perform decently && fast:
 
 ```sh
-./script/tortoise-tts.py --preset ultra_fast # ...
+./scripts/tortoise-tts.py --preset ultra_fast # ...
 ```
 
 For better quality, you might want the `very_fast` preset:
 
 ```sh
-./script/tortoise-tts.py --preset very_fast # ...
+./scripts/tortoise-tts.py --preset very_fast # ...
 ```
 
 You can obtain outputs 100% identical to the original tortoise repo with the following command:
 
 ```sh
-./script/tortoise-tts.py --preset ultra_fast_old --original_tortoise #...
+./scripts/tortoise-tts.py --preset ultra_fast_old --original_tortoise #...
 ```
 
 If you want to load a [fine-tuned autoregressive model](https://github.com/152334H/DL-Art-School), use the `--ar-checkpoint` argument:
 
 ```sh
-./script/tortoise-tts.py --preset very_fast --ar-checkpoint /path/to/checkpoint.pth #...
+./scripts/tortoise-tts.py --preset very_fast --ar-checkpoint /path/to/checkpoint.pth #...
 ```
 
 ## Webui
@@ -151,7 +151,7 @@ If you want to load a [fine-tuned autoregressive model](https://github.com/15233
 An experimental [Streamlit](https://streamlit.io/) web UI is now available. To access, run:
 
 ```bash
-$ streamlit run script/app.py
+$ streamlit run scripts/app.py
 ```
 
 ![](./static/webui_simple.png)
@@ -266,13 +266,13 @@ If you are on windows, you will also need to install pysoundfile: `conda install
 This script allows you to speak a single phrase with one or more voices.
 
 ```shell
-./script/tortoise-tts.py --text "I'm going to speak this" --voice random --preset fast
+./scripts/tortoise-tts.py --text "I'm going to speak this" --voice random --preset fast
 ```
 
 For reading large amounts of text:
 
 ```shell
-./script/tortoise-tts.py --voice random --preset fast < textfile.txt
+./scripts/tortoise-tts.py --voice random --preset fast < textfile.txt
 ```
 
 This will break up the textfile into sentences, and then convert them to speech one at a time. It will output a series
