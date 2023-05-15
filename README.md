@@ -2,7 +2,7 @@
 
 ### Tutorial 15 May 2023
 
-15 May 2023 Full Youtube Tutorial For Voice Synthesis and Training With DLAS andtortoise-tts-fast : [Link](https://youtu.be/OiMRlqcgDL0)
+15 May 2023 Full Youtube Tutorial For Voice Synthesis and Training With DLAS and tortoise-tts-fast : [Link](https://youtu.be/OiMRlqcgDL0)
 
 [![image](https://github.com/FurkanGozukara/DL-Art-School/assets/19240467/964f07d1-7be3-43c7-896b-ed1cbb7463da)](https://youtu.be/OiMRlqcgDL0)
 
