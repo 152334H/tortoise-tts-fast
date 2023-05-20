@@ -151,7 +151,7 @@ If you want to load a [fine-tuned autoregressive model](https://github.com/15233
 An experimental [Streamlit](https://streamlit.io/) web UI is now available. To access, run:
 
 ```bash
-$ streamlit run script/app.py
+$ streamlit run scripts/app.py
 ```
 
 ![](./static/webui_simple.png)
