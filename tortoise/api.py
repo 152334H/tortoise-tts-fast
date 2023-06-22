@@ -2,7 +2,9 @@
 
 import os
 import random
+from contextlib import contextmanager
 from time import time
+from typing import Union
 
 import torch
 import torch.nn.functional as F
@@ -16,19 +18,14 @@ from tortoise.models.clvp import CLVP
 from tortoise.models.cvvp import CVVP
 from tortoise.models.diffusion_decoder import DiffusionTts
 from tortoise.models.random_latent_generator import RandomLatentConverter
+from tortoise.models.utils import MODELS_DIR, get_model_path
 from tortoise.models.vocoder import VocConf
 from tortoise.utils.audio import denormalize_tacotron_mel, wav_to_univnet_mel
-from tortoise.utils.diffusion import (
-    SpacedDiffusion,
-    get_named_beta_schedule,
-    space_timesteps,
-)
+from tortoise.utils.diffusion import (SpacedDiffusion, get_named_beta_schedule,
+                                      space_timesteps)
 from tortoise.utils.tokenizer import VoiceBpeTokenizer
 from tortoise.utils.wav2vec_alignment import Wav2VecAlignment
 
-from tortoise.models.utils import MODELS_DIR, get_model_path
-
-from contextlib import contextmanager
 
 def pad_or_truncate(t, length):
     """
@@ -207,7 +204,7 @@ class TextToSpeech:
         autoregressive_batch_size=None,
         models_dir=MODELS_DIR,
         enable_redaction=True,
-        device=None,
+        device: Union[torch.device, str] = 'cuda' if torch.cuda.is_available() else 'cpu',
         high_vram=False,
         kv_cache=True,
         ar_checkpoint=None,
@@ -240,7 +237,7 @@ class TextToSpeech:
             else autoregressive_batch_size
         )
         self.enable_redaction = enable_redaction
-        self.device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+        self.device = torch.device(device)
         if self.enable_redaction:
             self.aligner = Wav2VecAlignment()
 
