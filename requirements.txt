@@ -35,7 +35,6 @@ backports-zoneinfo==0.2.1 ; python_version >= "3.8" and python_version < "3.9" \
 beautifulsoup4==4.11.2 ; python_version >= "3.8" and python_full_version != "3.9.7" and python_version < "3.12" \
     --hash=sha256:0e79446b10b3ecb499c1556f7e228a53e64a2bfcebd455f370d8927cb5b59e39 \
     --hash=sha256:bc4bdda6717de5a2987436fb8d72f45dc90dd856bdfd512a1314ce90349a0106
-bigvgan @ git+https://github.com/152334H/BigVGAN.git@HEAD ; python_version >= "3.8" and python_full_version != "3.9.7" and python_version < "3.12"
 blinker==1.5 ; python_version >= "3.8" and python_full_version != "3.9.7" and python_version < "3.12" \
     --hash=sha256:1eb563df6fdbc39eeddc177d953203f99f097e9bf0e2b8f9f3cf18b6ca425e36 \
     --hash=sha256:923e5e2f69c155f2cc42dafbbd70e16e3fde24d2d4aa2ab72fbe386238892462
