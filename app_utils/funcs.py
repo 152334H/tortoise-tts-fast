@@ -44,7 +44,7 @@ def list_voices(extra_voices_dir: Optional[str]):
     else:
         extra_voices_ls = []
     voices.extend(
-        [v for v in os.listdir("tortoise/voices") if v != "cond_latent_example"]
+        [v for v in os.listdir("../tortoise/voices") if v != "cond_latent_example"]
     )
     #
     return voices, extra_voices_ls
